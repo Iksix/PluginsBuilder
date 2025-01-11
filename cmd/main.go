@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/exec"
 	"plugins-builder/internal/config"
+	"time"
 )
 
 func main() {
@@ -44,9 +45,8 @@ func main() {
 		copy(fmt.Sprintf("./bin/Debug/net8.0/%s.dll", cfg.ApiName), fmt.Sprintf("./build/%s/shared/%s/%s.dll", cfg.PluginName, cfg.ApiName, cfg.ApiName))
 		copy(fmt.Sprintf("./bin/Debug/net8.0/%s.pdb", cfg.ApiName), fmt.Sprintf("./build/%s/shared/%s/%s.pdb", cfg.PluginName, cfg.ApiName, cfg.ApiName))
 	}
-	var input string
-	fmt.Scanf("%v", &input)
-	fmt.Print(input)
+	fmt.Println("NICE ✔")
+	time.Sleep(time.Second * 2)
 }
 
 func exists(path string) (bool, error) {
